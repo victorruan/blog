@@ -5,7 +5,8 @@
 
 ##如何启动?
 * ```git clone https://github.com/victorruan/victorruan.git```
-* ```cd victorruan/src```
+* ```cd victorruan;composer install;```
+* ```cd src```
 * ```php start.php start``` 
 
 ##项目依赖
