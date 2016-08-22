@@ -6,8 +6,12 @@
  * Time: 下午2:43
  */
 namespace VictorRuan\app\ctrls;
-class Topic{
+use VictorRuan\app\models\Book;
+use VictorRuan\base\Ctrl;
+
+class Topic extends Ctrl{
     public function index(){
-        echo '这是Topic的index方法';
+        $book = Book::first();
+        $this->render('index',$book);
     }
 }

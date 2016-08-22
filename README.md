@@ -12,4 +12,4 @@
 见`composer.json`
 
 ##注意
-* 请配置 ```victorruan/src/app/config/db.php```
+* 请配置 ```src/app/config/db.php```

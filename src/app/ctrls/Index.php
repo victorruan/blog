@@ -6,7 +6,6 @@ use VictorRuan\base\Ctrl;
 class Index extends Ctrl
 {
     public function index(){
-        $book = Book::first();
-        $this->render('index',$book);
+        echo 'hello,world';
     }
 }
