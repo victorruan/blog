@@ -1,0 +1,21 @@
+{
+    "name": "victorruan/victorruan",
+    "description": "这是一个强大的php库",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "阮佳佳",
+            "email": "250069802@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "workerman/workerman": "^3.3",
+        "mustache/mustache": "^2.11",
+        "php-activerecord/php-activerecord": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {"VictorRuan\\": "./src/"}
+    }
+}
