@@ -19,7 +19,7 @@ class Router
             $ctrl = explode('/',$_SERVER['REQUEST_URI'])[1];
         }
         try{
-            $ctrl = Factory::getInstance($this::CtrlNameSpace.'\\'.$ctrl,$engine);
+            $ctrl = Factory::getInstance($this::CtrlNameSpace.'\\'.ucfirst($ctrl),$engine);
         }catch(\Exception $e){
             printf_info($ctrl.' is not a ctrl!');
         }
