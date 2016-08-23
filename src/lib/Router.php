@@ -12,14 +12,14 @@ namespace VictorRuan\lib;
 class Router
 {
     const CtrlNameSpace = 'VictorRuan\app\ctrls';
-    public function getCtrl(\Mustache_Engine $engine){
+    public function getCtrl(){
         if(!isset(explode('/',$_SERVER['REQUEST_URI'])[1]) or empty(explode('/',$_SERVER['REQUEST_URI'])[1])){
             $ctrl = 'index';
         }else{
             $ctrl = explode('/',$_SERVER['REQUEST_URI'])[1];
         }
         try{
-            $ctrl = Factory::getInstance($this::CtrlNameSpace.'\\'.ucfirst($ctrl),$engine);
+            $ctrl = Factory::getInstance($this::CtrlNameSpace.'\\'.ucfirst($ctrl));
         }catch(\Exception $e){
             printf_info($ctrl.' is not a ctrl!');
         }

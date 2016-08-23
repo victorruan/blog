@@ -5,7 +5,8 @@
  * Date: 16/8/20
  * Time: 下午5:37
  */
-
+use Assetic\Asset\AssetCollection;
+use Assetic\Asset\FileAsset;
 //打印输出数组信息
 function printf_info($data)
 {
@@ -17,4 +18,11 @@ function printf_info($data)
     else{
         echo $data;
     }
+}
+
+function get_bower($path){
+    $js = new AssetCollection([
+        new FileAsset(BOWER_PATH.$path),
+    ]);
+    return $js->dump();
 }

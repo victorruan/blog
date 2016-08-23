@@ -11,12 +11,14 @@ namespace VictorRuan\base;
 
 class Ctrl
 {
-    public $engine;
-    public function __construct(\Mustache_Engine $engine)
+    public function __construct()
     {
-        $this->engine = $engine;
+
     }
-    public function render($template,$context=[]){
-        echo $this->engine->render($template,$context);
+    public function render($file,$params=[]){
+        foreach($params as $k=>$v){
+            $$k = $v;
+        }
+        include VIEWS_PATH.$file.".php";
     }
 }
