@@ -26,3 +26,7 @@ function get_bower($path){
     ]);
     return $js->dump();
 }
+
+function is_not_json($str){
+    return is_null(json_decode($str));
+}
