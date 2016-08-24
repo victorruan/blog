@@ -2,3 +2,4 @@ vendor
 .idea
 bower_components
 composer.lock
+build.sh
