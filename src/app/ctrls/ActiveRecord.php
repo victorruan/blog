@@ -15,7 +15,8 @@ class ActiveRecord extends Ctrl
     public function index(){
         $results = Book::_query("select * from books;");
         foreach($results as $key => $result){
-            echo $result->name;
+            echo $result->name."<br>";
+
         }
     }
 }
