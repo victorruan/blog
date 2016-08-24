@@ -36,7 +36,7 @@
     <div>
         <div class="col-xs-6 col-md-6">
             <script src='//w.segmentfault.com/card/1030000005907459.js?w=0&3rd=1&bg=0&bd=DDDDDD&cl=2e232e&btn=141210&noBtn=0'></script>        </div>
-        <div class="col-xs-6 col-md-6">
+        <div class="col-xs-6 col-md-6" style="border: 1px solid #DDDDDD;border-radius: 3px;">
             <!-- 多说评论框 start -->
             <div class="ds-thread" data-thread-key="index" data-title="victorruan的小站" data-url="/"></div>
             <!-- 多说评论框 end -->
