@@ -88,6 +88,15 @@
         }
     })
 </script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?db56094e1a7efb1579933847b95cdcaf";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 <style type="text/css">
     .container{padding-bottom:50px;}
     .jumbotron p{text-indent:2em;}
