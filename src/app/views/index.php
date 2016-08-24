@@ -19,6 +19,7 @@
     <input v-model="newtest.url" placeholder="请填写URL">
     <input v-model="newtest.title" placeholder="请填写标题">
     <button v-on:click="add">增加</button>
+    <button v-on:click="_edit">提交</button>
     </template>
 
     <div class="row testList" id="testList">
@@ -70,7 +71,8 @@
             _edit:function(){
                 if(this.edit){
                     this.$http.post('/lists',JSON.stringify(this.testLists)).then((response) => {
-                    }, (response) => {
+                        window.location.href = '/';
+                }, (response) => {
                         console.log('fail');
                     });
                 }
