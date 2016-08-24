@@ -6,13 +6,13 @@
         <h1 class="text-center">victorruan的小站</h1>
         <div>
             <p>我是一个程序员,这个网站我是用自己写的<a href="https://github.com/victorruan/victorruan">MVC框架</a>写的。</p>
-            <p>下面都是生活工作积累掌握到的知识，反正也可以当作笔记自查<p>
-            <p>与朋友交流时直接给出网址作为个人观点免得再重复打字。对于大牛来说，我这些知识都只是皮毛</p>
-            <p>主要都是针对工作中用到的来讲，用不到的就先略微提提或者暗示你去自己搜索资料研究就好了</p>
-            <p>写博客的感觉不错！建议看看 <a href="http://www.kkh86.com/it/expr/guide-mine-write-blog.html" target="_blank">写博客的好处</a></p>
-            <p class="links">
-                <button v-on:click="_edit">编辑</button>
-            </p>
+            <p>我是写PHP的,喜欢Laravel Yii</p>
+            <p>我在学习nodeJS,取其精,去其糟</p>
+            <p>当然nodeJs远远比不上php</p>
+<!--            <p>下面都是生活工作积累掌握到的知识，反正也可以当作笔记自查<p>-->
+<!--            <p>与朋友交流时直接给出网址作为个人观点免得再重复打字。对于大牛来说，我这些知识都只是皮毛</p>-->
+<!--            <p>主要都是针对工作中用到的来讲，用不到的就先略微提提或者暗示你去自己搜索资料研究就好了</p>-->
+<!--            <p>写博客的感觉不错！建议看看 <a href="http://www.kkh86.com/it/expr/guide-mine-write-blog.html" target="_blank">写博客的好处</a></p>-->
         </div>
     </header>
     <template v-if="edit">
@@ -53,7 +53,7 @@
     new Vue({
         el: '#app',
         data:{
-            edit:false
+            edit:<?=$edit?>
         },
         methods: {
             add: function () {

@@ -6,6 +6,11 @@ class Index extends Ctrl
 {
     public function index(){
         $disabledTip = "计划学习之中!";
-        $this->render('index',['disabledTip'=>$disabledTip]);
+        if(isset($_GET['edit']) and $_GET['edit']==='true'){
+            $edit = 'true';
+        }else{
+            $edit = 'false';
+        }
+        $this->render('index',['disabledTip'=>$disabledTip,'edit'=>$edit]);
     }
 }
