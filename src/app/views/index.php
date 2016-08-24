@@ -1,4 +1,4 @@
-<script src="//cdn.bootcss.com/vue/1.0.26/vue.min.js" xmlns:v-on="http://www.w3.org/1999/xhtml"></script>
+<script src="//cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
 <script src="//cdn.bootcss.com/vue-resource/0.9.3/vue-resource.min.js"></script>
 <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <div id="app" class="container">

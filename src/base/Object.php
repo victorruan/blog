@@ -16,7 +16,7 @@ class Object {
     /**
      * @var array 在当前对象里把属性存在一个数组$attributes里
      */
-    private $attributes = [];
+    public $attributes = [];
     public function __construct($config = []) {
         foreach($config as $key => $val) $this->$key = $val;
     }
@@ -25,5 +25,8 @@ class Object {
     }
     public function __get($var) {
         return $this->attributes[$var] ?? null;
+    }
+    public static function name(){
+        return get_called_class();
     }
 }

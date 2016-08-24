@@ -11,6 +11,7 @@
 * ```php start.php start``` 
 
 ##项目依赖
+* 仅支持php7 以上
 * 见`composer.json`
 * 见`bower.json`
 
