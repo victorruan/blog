@@ -18,8 +18,13 @@ class Router
         }else{
             $ctrl = explode('/',$_SERVER['REQUEST_URI'])[1];
         }
+        $ctrls = explode('_',$ctrl);
+        foreach($ctrls as &$value){
+            $value = ucfirst($value);
+        }
+        $ctrl = implode('',$ctrls);
         try{
-            $ctrl = Factory::getInstance($this::CtrlNameSpace.'\\'.ucfirst($ctrl));
+            $ctrl = Factory::getInstance($this::CtrlNameSpace.'\\'.$ctrl);
         }catch(\Exception $e){
             printf_info($ctrl.' is not a ctrl!');
         }
