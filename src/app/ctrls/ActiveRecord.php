@@ -7,13 +7,13 @@
  */
 
 namespace VictorRuan\app\ctrls;
-use VictorRuan\base\{Ctrl,ActiveRecord as AR};
+use VictorRuan\app\models\Book;
+use VictorRuan\base\Ctrl;
 
 class ActiveRecord extends Ctrl
 {
     public function index(){
-        AR::setDb(new \PDO("mysql:host=0.0.0.0;dbname=victorruan",'root','123456'));
-        $results = AR::_query("select * from books;");
+        $results = Book::_query("select * from books;");
         foreach($results as $key => $result){
             echo $result->name;
         }

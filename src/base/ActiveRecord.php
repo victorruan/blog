@@ -56,4 +56,14 @@ class ActiveRecord extends Object
         $this->attributes = array_merge($this->attributes, $this->dirty = $dirty);
         return $this;
     }
+
+    /**
+     * function to find one record and assign in to current object.
+     * @param int $id If call this function using this param, will find record by using this id. If not set, just find the first record in database.
+     * @return bool|ActiveRecord if find record, assign in to current object and return it, other wise return "false".
+     */
+    public function find($id = null) {
+        if ($id) $this->reset()->eq($this->primaryKey, $id);
+        return self::_query($this->limit(1)->_buildSql(array('select', 'from', 'join', 'where', 'group', 'having', 'order', 'limit')), $this->params, $this->reset(), true);
+    }
 }

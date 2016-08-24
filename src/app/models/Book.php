@@ -8,9 +8,7 @@
 
 namespace VictorRuan\app\models;
 
-use ActiveRecord\Model;
-
-class Book extends Model
+class Book extends \ActiveRecord
 {
 
 }
