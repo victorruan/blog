@@ -3,3 +3,4 @@ vendor
 bower_components
 composer.lock
 build.sh
+src/test
