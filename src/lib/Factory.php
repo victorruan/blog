@@ -12,7 +12,7 @@ class Factory{
         if(class_exists($classname)){
             if(!isset(self::$class_map[$classname])){
                 if($config){
-                    self::$class_map[$classname] = new $classname($config);
+                    self::$class_map[$classname] =    new $classname($config);
                 }else{
                     self::$class_map[$classname] = new $classname;
                 }

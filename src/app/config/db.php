@@ -1,13 +1,17 @@
 <?php
-$db = [
-    'driver'=>'mysql',
-    'host'=>'0.0.0.0',
-    'port'=>'3306',
-    'user'=>'root',
-    'pass'=>'123456',
-    'db'=>'victorruan'
-];
-$pdo = new PDO("{$db['driver']}:host={$db['host']}:{$db['port']};dbname={$db['db']}","{$db['user']}","{$db['pass']}");
+$pdo = \VictorRuan\lib\Factory::getInstance('PDO','sqlite:datas/victorruan.db');
 ActiveRecord::setDb($pdo);
-unset($db);
-unset($pdo);
+ActiveRecord::execute("CREATE TABLE IF NOT EXISTS user (
+            id INTEGER PRIMARY KEY,
+            name TEXT,
+            password TEXT
+        );");
+ActiveRecord::execute("DELETE from user ;");
+/** @var VictorRuan\app\models\User $user */
+$user = \VictorRuan\lib\Factory::getInstance('VictorRuan\app\models\User');
+$user->limit(1)->find();
+if(!isset($user->id)){
+    $user->name = 'demo';
+    $user->password = md5('demo');
+    $user->insert();
+}
