@@ -65,8 +65,8 @@
         },
         methods: {
             add: function () {
-                let url = this.newtest.url.trim();
-                let title = this.newtest.title.trim();
+                var url = this.newtest.url.trim();
+                var title = this.newtest.title.trim();
                 if (this.newtest) {
                     this.testLists.push({url:this.newtest.url,title:this.newtest.title});
                     this.newtest.url = this.newtest.title = ''
@@ -77,9 +77,9 @@
             },
             _edit:function(){
                 if(this.edit){
-                    this.$http.post('/lists',JSON.stringify(this.testLists)).then((response) => {
+                    this.$http.post('/lists',JSON.stringify(this.testLists)).then(function(response) {
                         window.location.href = '/';
-                }, (response) => {
+                }, function(response) {
                         console.log('fail');
                     });
                 }
@@ -87,9 +87,9 @@
             }
         },
         ready() {
-            this.$http.get('/lists').then((response) => {
+            this.$http.get('/lists').then(function(response) {
                 this.$set('testLists', response.json());
-            }, (response) => {
+            }, function(response) {
                 console.log('fail');
             });
         }
