@@ -114,4 +114,5 @@
     .disabled{color:#909090;}
     body header.jumbotron{padding:5px;}
     header .links{text-align:right;}
+    .ds-powered-by{display: none}
 </style>
