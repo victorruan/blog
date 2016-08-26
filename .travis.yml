@@ -7,8 +7,8 @@ before_script:
   - composer install --prefer-dist --dev
 
 script:
-  - mkdir -p build/logs
+  - php src/start.php start -d
 
 after_script:
-  - php -v
+  - php src/start.php start stop
 
