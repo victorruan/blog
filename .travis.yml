@@ -5,3 +5,11 @@ php:
 
 before_script:
   - composer install --prefer-dist --dev
+
+script:
+  - mkdir -p build/logs
+  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_script:
+  - php vendor/bin/coveralls -v
+
