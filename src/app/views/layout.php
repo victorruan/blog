@@ -52,4 +52,10 @@
     .sf-usercard{
         margin-bottom: 20px;
     }
+    pre code {
+        background: none;
+        font-size: 1em;
+        overflow-wrap: normal;
+        white-space: inherit;
+    }
 </style>

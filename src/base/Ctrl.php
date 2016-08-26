@@ -15,7 +15,7 @@ class Ctrl
     public $thread_key ;
     public function __construct()
     {
-        $this->thread_key = get_called_class();
+
     }
     public function render($_file,$params=[],$layout='layout'){
         foreach($params as $k=>$v){

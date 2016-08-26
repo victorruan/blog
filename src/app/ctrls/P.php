@@ -30,6 +30,10 @@ class P extends Ctrl
 * ```cd src```
 * ```php start.php start```
 
+```
+sjdhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhdsssssssssssss
+```
+
 ##项目依赖
 * 需要安装PDO php7.0-sqlite3 扩展
 * 仅支持php7 以上
@@ -39,9 +43,14 @@ class P extends Ctrl
 ##注意
 * 请配置 ```src/app/config/db.php```
 MARKDOWN;
+        $composer=file_get_contents(DATAS_PATH."/posts/composer.md");
+        if($id='composer'){
+            $this->title = '如何创建一个自己的【Composer/Packagist】包';
+            $text = $composer;
+        }
         $html = $parser->makeHtml($text);
         if(!empty($id))
-        $this->thread_key.='\\'.$id;
+        $this->thread_key=get_called_class().'\\'.$id;
         $this->render('post',['html'=>$html]);
     }
 }
