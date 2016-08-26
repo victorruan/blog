@@ -40,6 +40,7 @@ class P extends Ctrl
 * 请配置 ```src/app/config/db.php```
 MARKDOWN;
         $html = $parser->makeHtml($text);
+        if(!empty($id))
         $this->thread_key.='\\'.$id;
         $this->render('post',['html'=>$html]);
     }
