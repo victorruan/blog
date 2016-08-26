@@ -13,7 +13,7 @@
   "require": {
     "workerman/workerman": "^3.3",
     "kriswallsmith/assetic": "^1.3",
-    "bephp/activerecord": "dev-master"
+    "bephp/activerecord": "^2.1"
   },
   "autoload": {
     "psr-4": {"VictorRuan\\": "./src/"}
