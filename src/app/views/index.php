@@ -1,7 +1,3 @@
-<title>victorruan的小站</title>
-<script src="//cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
-<script src="//cdn.bootcss.com/vue-resource/0.9.3/vue-resource.min.js"></script>
-<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <div id="app" class="container">
     <header class="jumbotron">
         <h1 class="text-center">victorruan的小站</h1>
@@ -34,86 +30,50 @@
             </template>
         </div>
     </div>
-    <div>
-        <div class="col-xs-6 col-md-6">
-            <script src='//w.segmentfault.com/card/1030000005907459.js?w=0&3rd=1&bg=0&bd=DDDDDD&cl=2e232e&btn=141210&noBtn=0'></script>        </div>
-        <div class="col-xs-6 col-md-6" style="border: 1px solid #DDDDDD;border-radius: 3px;">
-            <!-- 多说评论框 start -->
-            <div class="ds-thread" data-thread-key="index" data-title="victorruan的小站" data-url="/"></div>
-            <!-- 多说评论框 end -->
-        </div>
-    </div>
-
-</div>
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    var duoshuoQuery = {short_name:"victorruan1990"};
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
-<!-- 多说公共JS代码 end -->
-<script>
-    new Vue({
-        el: '#app',
-        data:{
-            edit:<?=$edit?>
-        },
-        methods: {
-            add: function () {
-                var url = this.newtest.url.trim();
-                var title = this.newtest.title.trim();
-                if (this.newtest) {
-                    this.testLists.push({url:this.newtest.url,title:this.newtest.title});
-                    this.newtest.url = this.newtest.title = ''
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                edit:<?=$edit?>
+            },
+            methods: {
+                add: function () {
+                    var url = this.newtest.url.trim();
+                    var title = this.newtest.title.trim();
+                    if (this.newtest) {
+                        this.testLists.push({url:this.newtest.url,title:this.newtest.title});
+                        this.newtest.url = this.newtest.title = ''
+                    }
+                },
+                remove: function (index) {
+                    this.testLists.splice(index, 1)
+                },
+                _edit:function(){
+                    if(this.edit){
+                        this.$http.post('/lists',JSON.stringify(this.testLists)).then(function(response) {
+                            window.location.href = '/';
+                        }, function(response) {
+                            console.log('fail');
+                        });
+                    }
+                    this.edit = !this.edit;
                 }
             },
-            remove: function (index) {
-                this.testLists.splice(index, 1)
-            },
-            _edit:function(){
-                if(this.edit){
-                    this.$http.post('/lists',JSON.stringify(this.testLists)).then(function(response) {
-                        window.location.href = '/';
+            ready() {
+                this.$http.get('/lists').then(function(response) {
+                    this.$set('testLists', response.json());
                 }, function(response) {
-                        console.log('fail');
-                    });
-                }
-                this.edit = !this.edit;
+                    console.log('fail');
+                });
             }
-        },
-        ready() {
-            this.$http.get('/lists').then(function(response) {
-                this.$set('testLists', response.json());
-            }, function(response) {
-                console.log('fail');
-            });
-        }
-    })
-</script>
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?db56094e1a7efb1579933847b95cdcaf";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-<style type="text/css">
-    .container{padding-bottom:50px;}
-    .jumbotron p{text-indent:2em;}
-    body{padding:7px;}
-    .testList{margin-top:7px;}
-    .testList div{margin-bottom:20px;}
-    .enabled{font-weight:bold;}
-    .disabled{color:#909090;}
-    body header.jumbotron{padding:5px;}
-    header .links{text-align:right;}
-    .ds-powered-by{display: none}
-</style>
+        })
+    </script>
+    <style type="text/css">
+        .jumbotron p{text-indent:2em;}
+        .testList{margin-top:7px;}
+        .testList div{margin-bottom:20px;}
+        body header.jumbotron{padding:5px;}
+        header .links{text-align:right;}
+    </style>
+</div>
+

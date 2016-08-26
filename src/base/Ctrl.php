@@ -11,14 +11,18 @@ namespace VictorRuan\base;
 
 class Ctrl
 {
+    public $title = 'victorruan的小站';
+    public $thread_key ;
     public function __construct()
     {
-
+        $this->thread_key = get_called_class();
     }
-    public function render($file,$params=[]){
+    public function render($_file,$params=[],$layout='layout'){
         foreach($params as $k=>$v){
             $$k = $v;
         }
-        include VIEWS_PATH.$file.".php";
+        $_title = $this->title;
+        $_thread_key = $this->thread_key;
+        include VIEWS_PATH.$layout.".php";
     }
 }

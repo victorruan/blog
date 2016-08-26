@@ -14,5 +14,11 @@ if(strpos($_SERVER['REQUEST_URI'], '?')!==false){
     $_SERVER['REQUEST_URI'] = strstr($_SERVER['REQUEST_URI'], '?', true);
 }
 $ctrl = $router->getCtrl();
-if(is_object($ctrl))
-call_user_func([$ctrl,$router->getAction()]);
+
+if(is_object($ctrl)){
+    if(method_exists($ctrl,$router->getAction())){
+        call_user_func([$ctrl,$router->getAction()]);
+    }else{
+        call_user_func([$ctrl,'index'],$router->getAction());
+    }
+}
