@@ -2,14 +2,13 @@
 /**
  * Created by PhpStorm.
  * User: victorruan
- * Date: 16/8/25
- * Time: 上午11:29
+ * Date: 16/8/29
+ * Time: 下午1:41
  */
 
 namespace VictorRuan\app\models;
 
-
-class User extends \ActiveRecord{
-    public $table = 'users';
+class Post extends \ActiveRecord{
+    public $table = 'posts';
     public $primaryKey = 'id';
 }

@@ -12,7 +12,16 @@ function printf_info($data)
 {
     if(is_array($data)){
         foreach($data as $key=>$value){
-            echo "<font color='#bd5a27;'>$key</font> : $value <br/>";
+            if(is_array($value))
+            {
+                printf_info($value);
+            }
+            else{
+                if(php_sapi_name()==='cli')
+                echo "$key : $value \n";
+                else
+                echo "<font color='#bd5a27;'>$key</font> : $value <br/>";
+            }
         }
     }
     else{

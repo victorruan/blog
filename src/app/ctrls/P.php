@@ -9,48 +9,23 @@
 namespace VictorRuan\app\ctrls;
 use HyperDown\Parser;
 
+use VictorRuan\app\models\Post;
 use VictorRuan\base\Ctrl;
 
 class P extends Ctrl
 {
     public function index($id){
         $parser = new Parser;
-        $text = <<<MARKDOWN
-# victorruan
-[![Build Status](https://travis-ci.org/victorruan/victorruan.svg?branch=master)](https://travis-ci.org/victorruan/victorruan)
-
-* 这是一个为了装B自实现的php的MVC框架.
-* 特点是基于php-cli实现web服务器.
-* 不需要nginx等web容器支持.
-
-##如何启动?
-* ```bower install```
-* ```git clone https://github.com/victorruan/victorruan.git```
-* ```cd victorruan;composer install;```
-* ```cd src```
-* ```php start.php start```
-
-```
-sjdhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhdsssssssssssss
-```
-
-##项目依赖
-* 需要安装PDO php7.0-sqlite3 扩展
-* 仅支持php7 以上
-* 见`composer.json`
-* 见`bower.json`
-
-##注意
-* 请配置 ```src/app/config/db.php```
-MARKDOWN;
-        $composer=file_get_contents(DATAS_PATH."/posts/composer.md");
-        if($id='composer'){
-            $this->title = '如何创建一个自己的【Composer/Packagist】包';
-            $text = $composer;
+        $post = new Post();
+        $post->eq('id', $id)->find();
+        if($post->id <= 0){
+            $post->eq('alias',$id)->find();
+            if($post->id <= 0){
+                throw new \Exception('页面不存在');
+            }
         }
-        $html = $parser->makeHtml($text);
-        if(!empty($id))
-        $this->thread_key=get_called_class().'\\'.$id;
+        $html = $parser->makeHtml($post->content);
+        $this->thread_key = get_called_class().'\\'.$post->id;
         $this->render('post',['html'=>$html]);
     }
 }
