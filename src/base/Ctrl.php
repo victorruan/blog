@@ -17,12 +17,17 @@ class Ctrl
     {
 
     }
-    public function render($_file,$params=[],$layout='layout'){
-        foreach($params as $k=>$v){
+    public function render($_file,$_params=[],$_layout='layout'){
+        foreach($_params as $k=>$v){
             $$k = $v;
         }
         $_title = $this->title;
         $_thread_key = $this->thread_key;
-        include VIEWS_PATH.$layout.".php";
+        if($_layout!==false){
+            include VIEWS_PATH.$_layout.".php";
+        }else{
+            include VIEWS_PATH.$_file.".php";
+        }
     }
+
 }

@@ -44,4 +44,10 @@ class Router
     public function getAction(){
         return explode('/',$this->request_uri)[2]??'index';
     }
+
+    public function getParam(){
+        $arr = explode('/',$this->request_uri);
+        array_splice($arr, 0, 2);
+        return implode('/',$arr);
+    }
 }

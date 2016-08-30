@@ -13,7 +13,6 @@ if(in_array("pdo_sqlite", get_loaded_extensions())){
         ActiveRecord::execute("
             CREATE TABLE IF NOT EXISTS posts (
               id INTEGER PRIMARY KEY ,
-              alias TEXT UNIQUE,
               title TEXT,
               content TEXT,
               create_time INTEGER,
@@ -29,7 +28,6 @@ if(in_array("pdo_sqlite", get_loaded_extensions())){
 
         $post->title = '如何创建一个自己的【Composer/Packagist】包';
         $post->content = file_get_contents(DATAS_PATH.'posts/composer.md');
-        $post->alias = 'composer';
         $post->insert();
         $user->name = 'demo';
         $user->password = md5('demo');

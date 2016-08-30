@@ -13,6 +13,14 @@
             <li>
                 <a href="/">首页</a>
             </li>
+            <?php if(is_login()) :?>
+            <li>
+                <a href="/p/edit?id=<?=$id?>">编辑此文</a>
+            </li>
+            <li>
+                <a href="/p/edit">添加新文</a>
+            </li>
+            <?php endif?>
         </ul>
     </div>
 </nav>

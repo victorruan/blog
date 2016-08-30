@@ -8,11 +8,7 @@
 
 namespace VictorRuan\lib;
 
-
 class Vruan
 {
-    /**
-     * @var Slince\Di\Container $container
-     */
     static $container;
 }

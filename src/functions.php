@@ -39,3 +39,12 @@ function get_bower($path){
 function is_not_json($str){
     return is_null(json_decode($str));
 }
+
+function auth(){
+    if(!$_SESSION['login']){
+        \Workerman\Protocols\Http::header('Location:/login');
+    }
+}
+function is_login(){
+    return $_SESSION['login'];
+}
