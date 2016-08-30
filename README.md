@@ -1,6 +1,4 @@
-# [victorruan](https://github.com/victorruan/victorruan)
-
-[![Build Status](https://travis-ci.org/victorruan/victorruan.svg?branch=master)](https://travis-ci.org/victorruan/victorruan)
+# [victorruan](https://github.com/victorruan/victorruan) [![Build Status](https://travis-ci.org/victorruan/victorruan.svg?branch=master)](https://travis-ci.org/victorruan/victorruan)
 
 * 这是一个用来练手的小博客
 * 包含了一个为了装B自实现的php的MVC框架.
