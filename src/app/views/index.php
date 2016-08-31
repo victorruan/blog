@@ -17,7 +17,7 @@
     </template>
 
     <div class="row testList" id="testList">
-        <div v-for="testList of testLists" class="col-xs-12 col-md-3">{{$index+1}}、
+        <div v-for="testList of testLists" class="col-xs-12 col-sm-6 col-md-3">{{$index+1}}、
             <a v-if="!testList.disable" href="{{ testList.url }}" target="_blank" class="enabled">{{ testList.title }}</a>
             <a v-if="testList.disable" href="javascript:alert('<?=$disabledTip?>');" class="disabled">{{ testList.title }}</a>
             <template v-if="edit">
