@@ -11,6 +11,9 @@ class Index extends Ctrl
         }else{
             $edit = 'false';
         }
+        if($edit=='true'){
+            auth();
+        }
         $this->render('index',['disabledTip'=>$disabledTip,'edit'=>$edit]);
     }
 }
