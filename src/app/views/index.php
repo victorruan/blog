@@ -5,7 +5,7 @@
             <p>关于这个网站的<a href="/p/2">源码</a></p>
             <p>我是一个程序员</p>
             <p>一个主PHP的程序员,喜欢Laravel Yii,最近在研究slim</p>
-            <p>同时我在学习nodeJS,取其精,去其糟,我发现express同silm的思想很想</p>
+            <p>同时我在学习nodeJS,取其精,去其糟,我发现express同silm的思想很像</p>
             <p>当然nodeJs远远比不上php</p>
         </div>
     </header>
