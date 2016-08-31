@@ -1,5 +1,4 @@
 <?php
-Http::end('hello');
 include_once "../config/config.php";
 use VictorRuan\lib\Vruan;
 use Workerman\Protocols\Http;
