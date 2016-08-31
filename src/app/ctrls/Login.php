@@ -17,7 +17,7 @@ class Login extends Ctrl
 {
     public function index(){
         if(strtolower($_SERVER['REQUEST_METHOD'])!='post'){
-            if($_SESSION['login']==true){
+            if(is_login()){
                 Http::header("Location:/");
             }
             $this->render('login',[],false);

@@ -11,59 +11,54 @@ use HyperDown\Parser;
 
 use VictorRuan\app\models\Post;
 use VictorRuan\base\Ctrl;
+use Workerman\Protocols\Http;
 
 class P extends Ctrl
 {
     public function index($id){
         $parser = new Parser;
         $post = new Post();
-        $post->eq('id', $id)->find();
-        if($post->id <= 0){
-            $post->eq('title',urldecode($id))->find();
-            if($post->id <= 0){
-                throw new \Exception('页面不存在');
-            }
+        if($post->eq('id', $id)->find() or $post->eq('title',urldecode($id))->find()){
+            $this->title = $post->title;
+            $html = $parser->makeHtml($post->content);
+            $this->thread_key = get_called_class().'\\'.$post->id;
+            $this->render('post',['html'=>$html,'id'=>$post->id]);
+        }else{
+            throw new \Exception('页面不存在');
         }
-        $this->title = $post->title;
-        $html = $parser->makeHtml($post->content);
-        $this->thread_key = get_called_class().'\\'.$post->id;
-        $this->render('post',['html'=>$html,'id'=>$post->id]);
     }
 
     public function edit(){
         auth();
-        if($_SERVER['REQUEST_METHOD']!='POST'){
+        if(!is_post()){
             $id = $_GET['id']??0;
             $this->render('edit',['id'=>$id],false);
-        }else{
+        }
+        if(is_post())
+        {
             $_post = json_decode($GLOBALS['HTTP_RAW_POST_DATA'],true);
             $post = new Post();
             if($_post['id']=='undefined') $_post['id']=0;
             $id = $_post['id']??0;
-            $post->eq('id', $id)->find();
-            $_id = $post->id;
-            if($post->id<=0){
+            if(!$post->eq('id', $id)->find()){
                 //增加
                 $post->title = $_post['title'];
                 $post->content = $_post['content'];
                 $post->insert();
-                $_id = \ActiveRecord::$db->lastInsertId();
             }else{
                 //更改
                 $post->title = $_post['title'];
                 $post->content = $_post['content'];
                 $post->update();
             }
+            $_id = $post->id;
             echo json_encode(['id'=>$_id??0]);
         }
     }
     public function getPostById(){
         $post = new Post();
         $id = $_GET['id']??0;
-        $post->eq('id', $id)->find();
-        if($post->id <= 0){
-            $post->eq('title',urldecode($id))->find();
-        }
+        $post->eq('id', $id)->find() or $post->eq('title',urldecode($id))->find();
         echo json_encode(['title'=>$post->title??'','content'=>$post->content??'','id'=>$post->id??0]);
     }
 }

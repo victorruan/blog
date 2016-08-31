@@ -41,10 +41,13 @@ function is_not_json($str){
 }
 
 function auth(){
-    if(!$_SESSION['login']){
+    if(!is_login()){
         \Workerman\Protocols\Http::header('Location:/login');
     }
 }
 function is_login(){
-    return $_SESSION['login'];
+    return $_SESSION['login']??false;
+}
+function is_post(){
+    return $_SERVER['REQUEST_METHOD']=='POST';
 }
