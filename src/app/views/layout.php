@@ -81,6 +81,19 @@
     .navbar-default .navbar-nav>li>a {
         color: #fff;
     }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #1a5b92;
+    }
+    .navbar-default .navbar-toggle{
+        background-color: #f2f2f2;
+    }
+    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+        background-color: #fff;
+    }
+
+    .navbar-default .navbar-toggle {
+        border-color: #2970ad;
+    }
     .ds-thread{border: 1px solid #DDDDDD;border-radius: 3px;padding: 10px;}
     .container{padding-bottom:50px;}
     body{padding:7px;}
