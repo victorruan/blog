@@ -22,10 +22,13 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="/">首页</a>
+                    <a href="/">victorruan的小站</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">首页</a>
+                </li>
                 <li>
                     <a href="/p/2">帮助</a>
                 </li>
@@ -71,6 +74,13 @@
 </div>
 </body>
 <style>
+    .navbar-default {
+        background-color: #6e9fc8;
+        border-color: #104979;
+    }
+    .navbar-default .navbar-nav>li>a {
+        color: #fff;
+    }
     .ds-thread{border: 1px solid #DDDDDD;border-radius: 3px;padding: 10px;}
     .container{padding-bottom:50px;}
     body{padding:7px;}

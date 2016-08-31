@@ -1,6 +1,6 @@
 # [victorruan](https://github.com/victorruan/victorruan) [![Build Status](https://travis-ci.org/victorruan/victorruan.svg?branch=master)](https://travis-ci.org/victorruan/victorruan)
-
 * 这是一个用来练手的小博客
+* 此网站骄傲的采用了BootStrap和Vue.js
 * 包含了一个为了装B自实现的php的MVC框架.
 * 包含了基于php-cli实现web服务器.
 * 当然这个web服务器使用的是workerman框架中的[webserver](http://doc3.workerman.net/advanced/webserver.html)

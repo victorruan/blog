@@ -1,7 +1,7 @@
 <div id="app">
     <header class="jumbotron">
-        <h1 class="text-center">victorruan的小站</h1>
-        <div>
+        <div >
+            <h1 class="text-center">Welcome!</h1>
             <p>关于这个网站的<a href="/p/2">源码</a></p>
             <p>我是一个程序员</p>
             <p>一个主PHP的程序员,喜欢Laravel Yii,最近在研究slim</p>
@@ -9,6 +9,17 @@
             <p>当然nodeJs远远比不上php</p>
         </div>
     </header>
+
+<!--    <main class="bs-docs-masthead" id="content" role="main" tabindex="-1">-->
+<!--        <div class="container">-->
+<!--            <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">B</span>-->
+<!--            <p class="lead">Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。</p>-->
+<!--            <p class="lead">-->
+<!--                <a href="getting-started#download" class="btn btn-outline-inverse btn-lg" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'V3首页大图-下载Bootstrap按钮'])">下载 Bootstrap</a>-->
+<!--            </p>-->
+<!--            <p class="version">当前版本： v3.3.5 | 文档更新于：2015-06-22</p>-->
+<!--        </div>-->
+<!--    </main>-->
     <template v-if="edit">
     <input v-model="newtest.url" placeholder="请填写URL">
     <input v-model="newtest.title" placeholder="请填写标题">
