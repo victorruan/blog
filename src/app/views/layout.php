@@ -1,11 +1,14 @@
 <head>
     <title><?=$_title?></title>
+    <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
     <script src="//cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
     <script src="//cdn.bootcss.com/vue-resource/0.9.3/vue-resource.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<div class="container row clearfix col-md-12 column" >
 <?php /* @var string $_file */?>
 <?php include VIEWS_PATH.$_file.".php";?>
 <div>
@@ -42,24 +45,7 @@
 </script>
 <!--统计代码 end-->
 <script src='http://cdn.bootcss.com/socket.io/1.3.7/socket.io.js'></script>
-<script>
-    // 连接服务端
-    var socket = io('http://workerman.net:2120');
-    // uid可以是自己网站的用户id，以便针对uid推送以及统计在线人数
-    uid = 123;
-    // socket连接后以uid登录
-    socket.on('connect', function(){
-        socket.emit('login', uid);
-    });
-    // 后端推送来消息时
-    socket.on('new_msg', function(msg){
-        console.log("收到消息："+msg);
-    });
-    // 后端推送来在线数据时
-    socket.on('update_online_count', function(online_stat){
-        console.log(online_stat);
-    });
-</script>
+</div>
 </body>
 <style>
     .ds-thread{border: 1px solid #DDDDDD;border-radius: 3px;padding: 10px;}
