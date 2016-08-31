@@ -9,6 +9,29 @@
 </head>
 <body>
 <div class="container-fluid clearfix col-md-12 column" >
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/"><img src="https://avatars1.githubusercontent.com/u/6701576?v=3&s=460" alt="victorruan logo" width="50px"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">首页</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/p/2">帮助</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 <?php /* @var string $_file */?>
 <?php include VIEWS_PATH.$_file.".php";?>
 <div>
@@ -63,4 +86,5 @@
         overflow-wrap: normal;
         white-space: inherit;
     }
+    img{    max-width: 100%;  }
 </style>
