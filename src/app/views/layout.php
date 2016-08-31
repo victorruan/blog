@@ -9,9 +9,9 @@
 <?php /* @var string $_file */?>
 <?php include VIEWS_PATH.$_file.".php";?>
 <div>
-    <div class="col-xs-6 col-md-6">
+    <div class="col-xs-12 col-md-6">
         <script src='//w.segmentfault.com/card/1030000005907459.js?w=0&3rd=1&bg=0&bd=DDDDDD&cl=2e232e&btn=141210&noBtn=0'></script>        </div>
-    <div class="col-xs-6 col-md-6" >
+    <div class="col-xs-12 col-md-6" >
         <!-- 多说评论框 start -->
         <div class="ds-thread" data-thread-key="<?=$_thread_key?>" data-title="<?=$_title?>" data-url="<?=$_SERVER['REQUEST_URI']?>"></div>
         <!-- 多说评论框 end -->
