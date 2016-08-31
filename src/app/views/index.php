@@ -1,7 +1,7 @@
 <div id="app">
     <header class="jumbotron">
         <div >
-            <h1 class="text-center">WELCOME!</h1>
+            <h1 class="text-center">welcome!</h1>
             <p>关于这个网站的<a href="/p/2">源码</a></p>
             <p>我是一个程序员</p>
             <p>一个主PHP的程序员,喜欢Laravel Yii,最近在研究slim</p>
