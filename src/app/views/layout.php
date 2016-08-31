@@ -76,7 +76,7 @@
 <style>
     .navbar-default {
         background-color: #6e9fc8;
-        border-color: #104979;
+        border-color: #616161;
     }
     .navbar-default .navbar-nav>li>a {
         color: #fff;
