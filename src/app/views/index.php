@@ -3,7 +3,7 @@
         <div >
             <h1 class="text-center">welcome</h1>
             <p>这是一个简易的小博客,同时也是一个mvc框架,喜欢这个网站的朋友可以参考此网站的<a href="/p/2">源码</a></p>
-            <p>我是一个程序员,一个主PHP的程序员,我很喜欢Laravel Yii,最近在研究slim</p>
+            <p>我是一个程序员,一个主PHP的程序员,我很喜欢Laravel Yii,最近在研究slim,如果你有任何关于php的问题,可以<a href="https://segmentfault.com/t/php">点这里</a></p>
             <p>同时我在学习nodeJS,取其精,去其糟,我发现express同silm的思想很像,当然nodeJs远远比不上php</p>
         </div>
     </header>
