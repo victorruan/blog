@@ -22,6 +22,11 @@
                 </li>
             <?php endif?>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="/p/2">帮助</a>
+            </li>
+        </ul>
     </div>
 </nav>
 <div style="padding: 20px;border: 1px solid #DDDDDD;border-radius: 3px;margin-bottom: 20px ">
