@@ -1,4 +1,4 @@
-<div id="app" class="container">
+<div id="app">
     <header class="jumbotron">
         <h1 class="text-center">victorruan的小站</h1>
         <div>

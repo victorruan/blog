@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="container row clearfix col-md-12 column" >
+<div class="container-fluid clearfix col-md-12 column" >
 <?php /* @var string $_file */?>
 <?php include VIEWS_PATH.$_file.".php";?>
 <div>
