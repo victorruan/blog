@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Vruan聊天室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font: 13px Helvetica, Arial; }
