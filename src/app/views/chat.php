@@ -32,14 +32,14 @@
 <script>
     var socket = io('http://'+document.domain+':1025');
     var uid = '<?php echo $_COOKIE['guid'];?>';
-    var name = prompt('请输入你的名字');
-    while(!name){
-        name = prompt('请输入你的名字');
-    }
     // 当socket连接后发送登录请求
     socket.on('connect', function(){socket.emit('login', uid);});
     socket.on('update_online_count', function(msg){$('#online_count').html(msg);});
+    var name;
     $('form').submit(function(){
+        while(!name){
+            name = prompt('请输入你的名字');
+        }
         socket.emit('chat', name+":"+$('#m').val());
         $('#m').val('');
         return false;
