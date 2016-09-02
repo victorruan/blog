@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-<ul id="messages"></ul>
+<ul id="messages"><li>你可以打开另一个窗口进行测试</li></ul>
 <form action="">
     <input id="m" autocomplete="off" /><button>Send</button>
 </form>
