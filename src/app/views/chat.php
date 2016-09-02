@@ -37,7 +37,7 @@
     socket.on('connect', function(){socket.emit('login', uid);});
     socket.on('update_online_count', function(msg){$('#online_count').html(msg);});
     $('form').submit(function(){
-        socket.emit('chat', "<mark>"name+"</mark>:"+$('#m').val());
+        socket.emit('chat', "<mark>"+name+"</mark>:"+$('#m').val());
         $('#m').val('');
         return false;
     });
