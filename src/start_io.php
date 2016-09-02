@@ -33,6 +33,10 @@ $sender_io->on('connection', function($socket){
         $socket->emit('update_online_count', "当前<b>{$last_online_count}</b>人在线，共打开<b>{$last_online_page_count}</b>个页面");
     });
 
+    $socket->on('chat',function($msg)use($socket){
+        $socket->emit('chat', $msg);
+    });
+
     // 当客户端断开连接是触发（一般是关闭网页或者跳转刷新导致）
     $socket->on('disconnect', function () use($socket) {
         if(!isset($socket->uid))
