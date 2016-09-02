@@ -25,6 +25,9 @@
                 <li>
                     <a href="/">victorruan的小站</a>
                 </li>
+                <li>
+                    <a href="/chat">简易聊天室</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
