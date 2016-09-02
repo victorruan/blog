@@ -21,7 +21,7 @@
     <li>实现技术在此项目的<a href="https://github.com/victorruan">源码</a>中</li>
 </ul>
 <form action="">
-    <input id="m" autocomplete="off" /><button>Send</button>
+    <input id="m" autocomplete="off" placeholder="请输入聊天内容"/><button>Send</button>
 </form>
 <script src='//cdn.bootcss.com/socket.io/1.3.7/socket.io.js'></script>
 <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
