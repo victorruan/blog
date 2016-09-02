@@ -14,7 +14,11 @@
     </style>
 </head>
 <body>
-<ul id="messages"><li>你可以打开另一个窗口进行测试</li></ul>
+<ul id="messages">
+    <li>你可以打开另一个窗口进行测试</li>
+    <li>两边窗口的聊天记录是同步的哦</li>
+    <li>实现技术在此项目的<a href="https://github.com/victorruan">源码</a>中</li>
+</ul>
 <form action="">
     <input id="m" autocomplete="off" /><button>Send</button>
 </form>
