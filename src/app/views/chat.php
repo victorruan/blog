@@ -18,9 +18,9 @@
 <body>
 <ul id="messages">
     <li id="online_count"></li>
-    <li>你可以打开另一个窗口进行测试</li>
-    <li>两边窗口的聊天记录是同步的哦</li>
-    <li>实现技术在此项目的<a href="https://github.com/victorruan">源码</a>中</li>
+    <li>你可以打开另一个窗口进行测试,两边窗口的聊天记录是同步的哦</li>
+    <li><a href="/">返回首页</a></li>
+    <li>实现技术在此项目的<a href="https://github.com/victorruan/victorruan">源码</a>中</li>
 </ul>
 <form action="">
     <input class="col-xs-8" id="m" autocomplete="off" placeholder="请输入聊天内容"/>
