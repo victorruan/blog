@@ -15,6 +15,7 @@
 </head>
 <body>
 <ul id="messages">
+    <li id="online_count"></li>
     <li>你可以打开另一个窗口进行测试</li>
     <li>两边窗口的聊天记录是同步的哦</li>
     <li>实现技术在此项目的<a href="https://github.com/victorruan">源码</a>中</li>
@@ -30,6 +31,7 @@
     var uid = '<?php echo $_COOKIE['guid'];?>';
     // 当socket连接后发送登录请求
     socket.on('connect', function(){socket.emit('login', uid);});
+    socket.on('update_online_count', function(msg){$('#online_count').html(msg);});
     $('form').submit(function(){
         socket.emit('chat', $('#m').val());
         $('#m').val('');
