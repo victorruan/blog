@@ -36,7 +36,8 @@ $sender_io->on('connection', function($socket){
     });
 
     $socket->on('chat',function($msg)use($socket){
-        $socket->emit('chat', $msg);
+        global $sender_io;
+        $sender_io->emit('chat', $msg);
     });
 
     // 当客户端断开连接是触发（一般是关闭网页或者跳转刷新导致）
