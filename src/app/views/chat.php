@@ -23,6 +23,9 @@
 
 <script>
     var socket = io('http://'+document.domain+':1025');
+    var uid = '<?php echo $_COOKIE['guid'];?>';
+    // 当socket连接后发送登录请求
+    socket.on('connect', function(){socket.emit('login', uid);});
     $('form').submit(function(){
         socket.emit('chat', $('#m').val());
         $('#m').val('');
