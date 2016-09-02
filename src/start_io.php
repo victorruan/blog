@@ -1,4 +1,6 @@
 <?php
+include_once __DIR__ . '/../vendor/autoload.php';
+use Workerman\Worker;
 use Workerman\Lib\Timer;
 use PHPSocketIO\SocketIO;
 // 全局数组保存uid在线数据
@@ -67,3 +69,7 @@ $sender_io->on('workerStart', function(){
         }
     });
 });
+if(!defined('GLOBAL_START'))
+{
+    Worker::runAll();
+}
