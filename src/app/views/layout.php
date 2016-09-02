@@ -78,7 +78,7 @@
         // 初始化io对象
         var socket = io('http://'+document.domain+':1025');
         // uid 可以为网站用户的uid，作为例子这里用session_id代替
-        var uid = '<?php echo session_id();?>';
+        var uid = '<?php echo $_COOKIE['guid'];?>';
         // 当socket连接后发送登录请求
         socket.on('connect', function(){socket.emit('login', uid);});
         // 当服务端推送来消息时触发，这里简单的aler出来，用户可做成自己的展示效果
