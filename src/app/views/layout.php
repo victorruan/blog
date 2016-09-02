@@ -4,6 +4,7 @@
     <script src="//cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
     <script src="//cdn.bootcss.com/vue-resource/0.9.3/vue-resource.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='//cdn.bootcss.com/socket.io/1.3.7/socket.io.js'></script>
     <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -39,7 +40,9 @@
 <?php include VIEWS_PATH.$_file.".php";?>
 <div>
     <div class="col-xs-12 col-md-6">
-        <script src='//w.segmentfault.com/card/1030000005907459.js?w=0&3rd=1&bg=0&bd=DDDDDD&cl=2e232e&btn=141210&noBtn=0'></script>        </div>
+        <script src='//w.segmentfault.com/card/1030000005907459.js?w=0&3rd=1&bg=0&bd=DDDDDD&cl=2e232e&btn=141210&noBtn=0'></script>
+        <p id="online_count">当前<b>250</b>人在线，共打开<b>340</b>个页面</p>
+    </div>
     <div class="col-xs-12 col-md-6" >
         <!-- 多说评论框 start -->
         <div class="ds-thread" data-thread-key="<?=$_thread_key?>" data-title="<?=$_title?>" data-url="<?=$_SERVER['REQUEST_URI']?>"></div>
@@ -70,7 +73,17 @@
     })();
 </script>
 <!--统计代码 end-->
-<script src='http://cdn.bootcss.com/socket.io/1.3.7/socket.io.js'></script>
+
+    <script>
+        // 初始化io对象
+        var socket = io('http://'+document.domain+':1025');
+        // uid 可以为网站用户的uid，作为例子这里用session_id代替
+        var uid = '<?php echo session_id();?>';
+        // 当socket连接后发送登录请求
+        socket.on('connect', function(){socket.emit('login', uid);});
+        // 当服务端推送来消息时触发，这里简单的aler出来，用户可做成自己的展示效果
+        socket.on('update_online_count', function(msg){$('#online_count').html(msg);});
+    </script>
 </div>
 </body>
 <style>

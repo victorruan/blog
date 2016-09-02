@@ -1,12 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: victorruan
- * Date: 16/8/20
- * Time: 下午5:29
- */
-require_once __DIR__.'/../vendor/workerman/workerman/Autoloader.php';
-$web = new \Workerman\WebServer('http://0.0.0.0:1024');
-$web->addRoot('',__DIR__.'/app');
-$web->count = 2;
-\Workerman\Worker::runAll();
+include __DIR__ . '/../vendor/autoload.php';
+use Workerman\Worker;
+// 加载IO 和 Web
+require_once __DIR__ . '/start_io.php';
+require_once __DIR__ . '/start_web.php';
+// 运行所有服务
+Worker::runAll();

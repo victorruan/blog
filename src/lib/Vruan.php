@@ -11,4 +11,6 @@ namespace VictorRuan\lib;
 class Vruan
 {
     static $container;
+    //方便在线统计用户信息
+    static $user_map = [];
 }
