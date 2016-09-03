@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="/">victorruan的小站</a>
+                    <a href="https://victorruan.gitbooks.io/vruan/content/">Vruan的小站</a>
                 </li>
                 <li>
                     <a href="/chat">简易聊天室</a>
