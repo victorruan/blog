@@ -1,5 +1,6 @@
 <head>
     <title><?=$_title?></title>
+    <link href="https://avatars1.githubusercontent.com/u/6701576?v=3&s=460" type=image/x-icon rel="shortcut icon" />
     <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
     <script src="//cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
     <script src="//cdn.bootcss.com/vue-resource/0.9.3/vue-resource.min.js"></script>
