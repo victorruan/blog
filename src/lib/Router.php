@@ -42,7 +42,11 @@ class Router
     }
 
     public function getAction(){
-        return explode('/',$this->request_uri)[2]??'index';
+        $arr = explode('/',$this->request_uri);
+        if(isset($arr[2])&&!empty($arr[2])){
+            return $arr[2];
+        }
+        return 'index';
     }
 
     public function getParam(){

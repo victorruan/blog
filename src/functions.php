@@ -46,8 +46,11 @@ function auth(){
     }
 }
 function is_login(){
-    return $_SESSION['login']??false;
+    return isset($_SESSION['login'])&&$_SESSION['login'];
 }
 function is_post(){
     return $_SERVER['REQUEST_METHOD']=='POST';
+}
+function get_sf_questions(){
+    return file_get_contents('https://segmentfault.com/t/php?type=unsolved');
 }
