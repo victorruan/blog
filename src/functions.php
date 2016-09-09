@@ -58,6 +58,5 @@ function get_sf_questions(){
     array_walk($match[1],function(&$v,$k){
         $v = "https://segmentfault.com".$v;
     });
-//    return array_combine($match[1],$match[2]);
-    return ($match[0]);
+    return array_combine($match[1],$match[2]);
 }
