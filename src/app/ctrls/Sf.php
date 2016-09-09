@@ -5,7 +5,7 @@ class Sf extends Ctrl
 {
    public function index(){
        array_walk(get_sf_questions(),function($v,$k){
-           echo "<a href=\"{$k}\">{$v}</a>";
+           echo "<a href=\"{$k}\">{$v}</a><br>";
        });
    }
 }
