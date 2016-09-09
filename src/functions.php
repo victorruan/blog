@@ -51,6 +51,13 @@ function is_login(){
 function is_post(){
     return $_SERVER['REQUEST_METHOD']=='POST';
 }
+//获取segmentfault未解决问题的首屏
 function get_sf_questions(){
-    return file_get_contents('https://segmentfault.com/t/php?type=unsolved');
+    $html =  file_get_contents('https://segmentfault.com/t/php?type=unsolved');
+    preg_match_all("/<h2 class=\"title\"><a href=\"(\/q\/\d+)\">(.*)<\/a><\/h2>/",$html,$match);
+    array_walk($match[1],function(&$v,$k){
+        $v = "https://segmentfault.com".$v;
+    });
+//    return array_combine($match[1],$match[2]);
+    return ($match[0]);
 }

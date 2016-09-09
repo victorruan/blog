@@ -4,6 +4,8 @@ use VictorRuan\base\Ctrl;
 class Sf extends Ctrl
 {
    public function index(){
-       echo get_sf_questions();
+       array_walk(get_sf_questions(),function($v){
+           echo $v;
+       });
    }
 }
