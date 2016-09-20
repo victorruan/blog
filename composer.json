@@ -16,7 +16,8 @@
     "bephp/activerecord": "^2.1",
     "joyqi/hyper-down": "dev-master",
     "slince/di": "*",
-    "workerman/phpsocket.io" : ">1.0.0"
+    "workerman/phpsocket.io" : ">1.0.0",
+    "klein/klein": "^2.1"
   },
   "autoload": {
     "psr-4": {"VictorRuan\\": "./src/"}

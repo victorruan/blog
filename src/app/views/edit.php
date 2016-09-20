@@ -36,6 +36,7 @@
         },
         methods:{
             _edit:function(){
+                console.log(this.post);
                 this.$http.post('/p/edit',JSON.stringify(this.post)).then(function(response) {
                     var obj = response.json();
                     window.location.href = '/p/'+obj.id;
@@ -45,7 +46,7 @@
             }
         },
         ready() {
-            this.$http.get('/p/getPostById?id=<?=$id?>').then(function(response) {
+            this.$http.get('/p/getPostById/<?=$id?>').then(function(response) {
                 this.$set('post', response.json());
             }, function(response) {
                 console.log('fail');

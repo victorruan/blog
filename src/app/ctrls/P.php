@@ -15,7 +15,8 @@ use Workerman\Protocols\Http;
 
 class P extends Ctrl
 {
-    public function index($id){
+    public function index($req,$rsp){
+        $id = $req->id;
         $parser = new Parser;
         $post = new Post();
         if($post->eq('id', $id)->find() or $post->eq('title',urldecode($id))->find()){
@@ -28,10 +29,14 @@ class P extends Ctrl
         }
     }
 
-    public function edit(){
+    public function edit($req){
         auth();
         if(!is_post()){
-            $id = $_GET['id']??0;
+            if(!isset($_GET['id'])){
+                $id = $req->id;
+            }else{
+                $id = $_GET['id'];
+            }
             $this->render('edit',['id'=>$id],false);
         }
         if(is_post())
@@ -39,7 +44,7 @@ class P extends Ctrl
             $_post = json_decode($GLOBALS['HTTP_RAW_POST_DATA'],true);
             $post = new Post();
             if($_post['id']=='undefined') $_post['id']=0;
-            $id = $_post['id']??0;
+            $id = $_post['id'];
             if(!$post->eq('id', $id)->find()){
                 //增加
                 $post->title = $_post['title'];
@@ -55,9 +60,13 @@ class P extends Ctrl
             echo json_encode(['id'=>$_id??0]);
         }
     }
-    public function getPostById(){
+    public function getPostById($req){
         $post = new Post();
-        $id = $_GET['id']??0;
+        if(!isset($_GET['id'])){
+            $id = $req->id;
+        }else{
+            $id = $_GET['id'];
+        }
         $post->eq('id', $id)->find() or $post->eq('title',urldecode($id))->find();
         echo json_encode(['title'=>$post->title??'','content'=>$post->content??'','id'=>$post->id??0]);
     }
