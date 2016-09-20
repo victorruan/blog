@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: victorruan
- * Date: 16/8/20
- * Time: 下午5:37
- */
 use Assetic\Asset\AssetCollection;
 use Assetic\Asset\FileAsset;
 //打印输出数组信息

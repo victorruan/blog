@@ -2,7 +2,7 @@
 namespace VictorRuan\app\ctrls;
 use VictorRuan\base\RestCtrl;
 use Workerman\Protocols\HttpCache;
-
+//首页文章列表
 class Lists extends RestCtrl
 {
 
