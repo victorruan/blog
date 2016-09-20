@@ -26,8 +26,8 @@ $router->respond('/chat', [Vruan::$container->get('chat'),'index']);
 $router->respond('/login', [Vruan::$container->get('login'),'index']);
 $router->respond('/sf', [Vruan::$container->get('sf'),'index']);
 $router->with('/p', function () use ($router) {
-    $router->respond('GET', '/[:id]', [Vruan::$container->get('p'),'index']);
     $router->respond('/edit', [Vruan::$container->get('p'),'edit']);
+    $router->respond('GET', '/[:id]', [Vruan::$container->get('p'),'index']);
     $router->respond('GET', '/edit/[:id]', [Vruan::$container->get('p'),'edit']);
     $router->respond('GET', '/getPostById/[:id]', [Vruan::$container->get('p'),'getPostById']);
 });
