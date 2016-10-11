@@ -19,7 +19,7 @@
             <a v-if="!testList.disable" v-bind:href="testList.url" target="_blank" class="enabled">{{ testList.title }}</a>
             <a v-if="testList.disable" href="javascript:alert('<?=$disabledTip?>');" class="disabled">{{ testList.title }}</a>
             <template v-if="edit">
-            <button v-on:click="remove($index)">X</button>
+            <button v-on:click="remove(index)">X</button>
             <input  v-model="testList.url">
             <input  v-model="testList.title">
             </template>
