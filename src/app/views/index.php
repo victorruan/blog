@@ -30,7 +30,8 @@
             el: '#app',
             data:{
                 edit:<?=$edit?>,
-                testLists:[]
+                testLists:[],
+                newtest:{url:'',title:''}
             },
             methods: {
                 add: function () {
@@ -46,10 +47,8 @@
                 },
                 _edit:function(){
                     if(this.edit){
-                        this.$http.post('/lists',JSON.stringify(this.testLists)).then(function(response) {
+                        $.post('/lists',JSON.stringify(this.testLists),function(){
                             window.location.href = '/';
-                        }, function(response) {
-                            console.log('fail');
                         });
                     }
                     this.edit = !this.edit;
