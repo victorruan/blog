@@ -18,3 +18,5 @@
 * 需要安装PDO php7.0-sqlite3 扩展
 * php7
 * 见`composer.json`
+
+_20161010 修改为vue2.0,并去掉vue-resource_
