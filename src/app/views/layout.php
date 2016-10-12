@@ -18,7 +18,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/"><img src="https://avatars1.githubusercontent.com/u/6701576?v=3&s=460" alt="victorruan logo" width="50px"></a>
+            <a href="/">
+                <img style="
+      margin:100px auto  0;
+      -moz-transform:rotate(-90deg);
+      -webkit-transform:rotate(-90deg);
+       filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3)" src="https://sfault-avatar.b0.upaiyun.com/296/137/2961371780-577f25f65b3de_medium40" alt="victorruan logo" width="50px">
+            </a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
