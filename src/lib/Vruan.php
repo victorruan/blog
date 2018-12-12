@@ -8,8 +8,13 @@
 
 namespace VictorRuan\lib;
 
+use Slince\Di\Container;
+
 class Vruan
 {
+    /**
+     * @var Container
+     */
     static $container;
     //方便在线统计用户信息
     static $user_map = [];

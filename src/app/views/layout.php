@@ -43,30 +43,6 @@
     </nav>
 <?php /* @var string $_file */?>
 <?php include VIEWS_PATH.$_file.".php";?>
-<div>
-    <div class="col-xs-12 col-md-6">
-        <script src='//w.segmentfault.com/card/1030000005907459.js?w=0&3rd=1&bg=0&bd=DDDDDD&cl=2e232e&btn=141210&noBtn=0'></script>
-        <p id="online_count">当前<b>250</b>人在线，共打开<b>340</b>个页面</p>
-    </div>
-    <div class="col-xs-12 col-md-6" >
-        <!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="<?=$_thread_key?>" data-title="<?=$_title?>" data-url="<?=$_SERVER['REQUEST_URI']?>"></div>
-        <!-- 多说评论框 end -->
-    </div>
-</div>
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    var duoshuoQuery = {short_name:"victorruan1990"};
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
-<!-- 多说公共JS代码 end -->
 <!--统计代码 start-->
 <script>
     var _hmt = _hmt || [];
